@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Fitness+時代の「デジタル・コンシェルジュ」戦略｜健康運動指導士向け</title>
+  <meta name="description" content="月額980円×データ×習慣化。Apple Fitness+時代に、健康運動指導士が高付加価値で生き残る“次世代モデル”を1枚で理解。PDF・動画・音声もこのページで。">
+  <meta property="og:title" content="Apple Fitness+時代の「デジタル・コンシェルジュ」戦略" />
+  <meta property="og:description" content="データで処方し、共感で継続させる。健康運動指導士の次世代ビジネス設計。" />
+  <meta property="og:image" content="hero.png" />
+  <meta name="theme-color" content="#0B1220" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text:#EAF0FF;
+      --muted:#B7C0DA;
+      --line: rgba(255,255,255,.12);
+      --accent:#7C5CFF;
+      --accent2:#00D2FF;
+      --accent3:#00FFA8;
+      --danger:#FF4D6D;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --radius2: 28px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(0,210,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 60% 120%, rgba(0,255,168,.12), transparent 55%),
+        linear-gradient(180deg, #050712 0%, #070A12 40%, #070A12 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      font-weight:900; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 26px rgba(124,92,255,.25);
+    }
+    .nav{
+      display:none; gap:14px; color:var(--muted); font-weight:700; font-size:13px;
+    }
+    .nav a{ text-decoration:none; opacity:.9 }
+    .nav a:hover{ opacity:1; color:var(--text) }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:var(--text); text-decoration:none;
+      font-weight:800; letter-spacing:.2px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.2); }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 18px 45px rgba(124,92,255,.22);
+    }
+    .btn.primary:hover{ transform: translateY(-1px) scale(1.01); }
+    .btn.ghost{ background: transparent; }
+
+    .hero{ padding: 44px 0 18px; }
+    .hero-grid{
+      display:grid; grid-template-columns: 1fr; gap:16px;
+      align-items: stretch;
+    }
+    .hero-card{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--radius2);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .chiprow{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+    .chip{
+      padding:8px 10px; border-radius:999px;
+      background: rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:800; font-size:12px; color:var(--muted);
+    }
+    .chip strong{ color: var(--text); }
+    h1{
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: .2px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .hero-ctas{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .hero-media{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius2);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero-media .img{
+      width:100%; height:100%;
+      display:block;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .stamp{
+      position:absolute; right:14px; top:14px;
+      padding:10px 12px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(0,255,168,.18), rgba(0,210,255,.18));
+      border:1px solid rgba(255,255,255,.14);
+      font-weight:900; font-size:12px;
+    }
+
+    .section{ padding: 22px 0; }
+    .section h2{
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin: -6px 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .grid{
+      display:grid; grid-template-columns: 1fr; gap:12px;
+    }
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 10px 36px rgba(0,0,0,.22);
+    }
+    .card h3{ margin:0 0 8px; font-size:16px; }
+    .card p{ margin:0; color:var(--muted); line-height:1.8; font-size:14px; }
+    .kpi{
+      display:flex; gap:10px; align-items:center; margin-top:10px; flex-wrap:wrap;
+    }
+    .pill{
+      padding:8px 10px; border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:900; font-size:12px;
+    }
+    .pill.bad{ border-color: rgba(255,77,109,.35); background: rgba(255,77,109,.10); }
+    .pill.good{ border-color: rgba(0,255,168,.32); background: rgba(0,255,168,.09); }
+
+    .steps{
+      display:grid; grid-template-columns: 1fr; gap:12px;
+    }
+    .step{
+      position:relative;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      overflow:hidden;
+    }
+    .step .n{
+      width:42px; height:42px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.9), rgba(0,210,255,.9));
+      font-weight:1000;
+      box-shadow: 0 14px 40px rgba(124,92,255,.20);
+      margin-bottom:10px;
+    }
+    .step h3{ margin:0 0 6px; font-size:16px; }
+    .step p{ margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+
+    .media-grid{
+      display:grid; grid-template-columns: 1fr; gap:12px;
+    }
+    video, audio, iframe{
+      width:100%;
+      border-radius: 18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 10px 40px rgba(0,0,0,.25);
+    }
+    iframe{ height: 520px; }
+
+    .pricing{
+      display:grid; grid-template-columns: 1fr; gap:12px;
+    }
+    .plan{
+      padding: 16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      position:relative;
+      overflow:hidden;
+    }
+    .plan.reco{
+      border-color: rgba(124,92,255,.45);
+      background: linear-gradient(180deg, rgba(124,92,255,.18), rgba(255,255,255,.05));
+    }
+    .badge{
+      position:absolute; right:14px; top:14px;
+      padding:8px 10px; border-radius:999px;
+      font-weight:1000; font-size:12px;
+      background: rgba(124,92,255,.22);
+      border:1px solid rgba(124,92,255,.35);
+    }
+    .plan h3{ margin:0 0 4px; }
+    .price{ font-size:22px; font-weight:1000; margin: 6px 0 10px; }
+    .ul{ margin:0; padding-left: 18px; color: var(--muted); line-height: 1.9; font-size:14px; }
+    .plan .actions{ margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; }
+
+    .footer{
+      padding: 28px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .ctaDock{
+      position: sticky;
+      bottom: 10px;
+      z-index: 60;
+      margin-top: 18px;
+    }
+    .ctaDock-inner{
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      padding: 12px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(7,10,18,.72);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+    .ctaDock p{ margin:0; font-size: 12px; color: var(--muted); }
+    .ctaDock strong{ color: var(--text); }
+
+    @media (min-width: 880px){
+      .nav{ display:flex; }
+      .hero{ padding: 58px 0 22px; }
+      .hero-grid{ grid-template-columns: 1.15fr .85fr; gap:16px; }
+      h1{ font-size: 40px; }
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+      .steps{ grid-template-columns: repeat(3, 1fr); }
+      .media-grid{ grid-template-columns: 1.1fr .9fr; }
+      .pricing{ grid-template-columns: repeat(3, 1fr); }
+      iframe{ height: 680px; }
+    }
+
+    .tiny{
+      font-size: 12px;
+      color: rgba(183,192,218,.85);
+    }
+    .hr{
+      height:1px; background: var(--line); margin: 14px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Digital Concierge LP</span>
+        </a>
+        <nav class="nav" aria-label="page">
+          <a href="#problem">市場の激変</a>
+          <a href="#solution">解決策</a>
+          <a href="#process">3ステップ</a>
+          <a href="#media">素材</a>
+          <a href="#pricing">収益モデル</a>
+        </nav>
+        <a class="btn primary" href="#cta">無料で全体像を確認</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="stamp">Apple Fitness+時代の生存戦略</div>
+            <div class="chiprow">
+              <div class="chip"><strong>月額980円</strong>の衝撃</div>
+              <div class="chip">データ × 共感 × 継続</div>
+              <div class="chip">“教える”→“処方＆管理”</div>
+            </div>
+            <h1>
+              健康運動指導士の次世代モデル<br>
+              <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:1000;">
+                デジタル・コンシェルジュ
+              </span>
+            </h1>
+            <p class="lead">
+              価格競争に巻き込まれない。<br>
+              ウェアラブルの数値を読み解き、行動を“処方”し、感情に寄り添って習慣化を伴走する。<br>
+              PDF・動画・音声をこのページに統合して、すぐに提案・講演・販売に使える形へ。
+            </p>
+            <div class="hero-ctas">
+              <a class="btn primary" href="#media">まず動画で掴む（90秒〜）</a>
+              <a class="btn" href="#pdf">PDFをその場で読む</a>
+              <a class="btn ghost" href="#pricing">収益モデルを見る</a>
+            </div>
+            <div class="hr"></div>
+            <p class="tiny">
+              ※本ページは「資料の要点を、LPとして再編集」したサンプルです。文言やCTAは後で差し替えできます。
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <img class="img" src="hero.png" alt="ヒーロー画像（差し替え可）">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" id="problem">
+      <div class="wrap">
+        <h2>市場の激変：デジタルによる破壊と既存の課題</h2>
+        <p class="sub">
+          「場所の提供」や「動画で教える」だけの価値は、月額980円級のエコシステムに吸収されていきます。 :contentReference[oaicite:1]{index=1}
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>価格破壊：月額980円が“基準”になる</h3>
+            <p>
+              従来の月会費型（例：1万円）に対し、ハード・ソフト・コンテンツが統合された低価格モデルが登場。
+              価格だけで勝負するほど、勝ち目が薄くなります。 :contentReference[oaicite:2]{index=2}
+            </p>
+            <div class="kpi">
+              <span class="pill bad">価格競争 → 消耗</span>
+              <span class="pill">場所依存 → リーチ制限</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>「労働集約型」の天井</h3>
+            <p>
+              時間切り売りは、稼働の上限＝年収の上限になりやすい。
+              さらに“教える価値”そのものが、コンテンツ化で価格競争に晒されます。 :contentReference[oaicite:3]{index=3}
+            </p>
+            <div class="kpi">
+              <span class="pill bad">稼働依存</span>
+              <span class="pill bad">単価が上がりにくい</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>生存戦略：代替できない付加価値へ</h3>
+            <p>
+              デジタルに奪われないのは、数値の“解釈”と、感情への“共感”と、行動の“設計”。
+              ここに専門性を寄せると、モデルが変わります。 :contentReference[oaicite:4]{index=4}
+            </p>
+            <div class="kpi">
+              <span class="pill good">解釈</span>
+              <span class="pill good">共感</span>
+              <span class="pill good">継続設計</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section" id="solution">
+      <div class="wrap">
+        <h2>解決策：次世代モデル「デジタル・コンシェルジュ」</h2>
+        <p class="sub">
+          ウェアラブル（データ）と専門知見（解釈）を融合し、クライアントの行動を“処方＆管理”するモデル。 :contentReference[oaicite:5]{index=5}
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>“教える”から“処方＆管理”へ</h3>
+            <p>
+              その日の状態に合わせてメニューを設計し、数値で結果を確認し、継続できる形へ落とし込む。
+              役割が「インストラクター」から「コンディション・マネージャ」へ進化します。 :contentReference[oaicite:6]{index=6}
+            </p>
+          </div>
+          <div class="card">
+            <h3>差別化の核① HRV（心拍変動）の読み解き</h3>
+            <p>
+              ストレスや回復のサインを読み、オーバートレーニング回避など“介入”につなげる。
+              AIが苦手な領域は「共感」と「解釈」です。 :contentReference[oaicite:7]{index=7}
+            </p>
+          </div>
+          <div class="card">
+            <h3>差別化の核② 睡眠×VO2 maxで“健康寿命”管理</h3>
+            <p>
+              感覚ではなく数値で管理するから、提案がブレない。
+              運動を“イベント”ではなく“生活設計”に変えられます。 :contentReference[oaicite:8]{index=8}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <h2>3ステップの介入プロセス</h2>
+        <p class="sub">
+          Assessment → Monitoring → Intervention。オンライン前提で設計すると、移動ゼロで高単価化が成立します。 :contentReference[oaicite:9]{index=9}
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="n">1</div>
+            <h3>Assessment & Prescription</h3>
+            <p>オンライン面談で現状を把握し、Apple Fitness+等を“教材”として使いながらメニューを処方。 :contentReference[oaicite:10]{index=10}</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <h3>Monitoring</h3>
+            <p>心拍・カロリー・睡眠などを共有し、日々の状態を可視化。継続の設計図を作る。 :contentReference[oaicite:11]{index=11}</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <h3>Intervention</h3>
+            <p>数値の変化と心の状態から、言葉がけ・調整・休養も含めて介入。習慣化へ導く。 :contentReference[oaicite:12]{index=12}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section class="section" id="media">
+      <div class="wrap">
+        <h2>アップロード素材をこのページで再生・閲覧</h2>
+        <p class="sub">
+          「動画→音声→PDF」の順で見せると理解が速いです（講演・営業にも流用できます）。
+        </p>
+
+        <div class="media-grid">
+          <div class="card" id="video">
+            <h3>動画（mp4）</h3>
+            <p class="tiny">※同フォルダに mp4 がある前提です。</p>
+            <div style="height:10px"></div>
+            <video controls preload="metadata">
+              <source src="Appleの衝撃：月額980円フィットネスの未来.mp4" type="video/mp4" />
+              お使いのブラウザは video タグに対応していません。
+            </video>
+          </div>
+
+          <div class="card">
+            <h3>音声（m4a）</h3>
+            <p class="tiny">移動中に聴ける導入用。音声→PDFで理解が固まります。</p>
+            <div style="height:10px"></div>
+            <audio controls preload="metadata">
+              <source src="Apple_Fitness+上陸とジム・指導者の生存戦略.m4a" type="audio/mp4" />
+              お使いのブラウザは audio タグに対応していません。
+            </audio>
+            <div style="height:12px"></div>
+            <a class="btn" href="#pdf">次：PDFで全体像を見る</a>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card" id="pdf">
+          <h3>PDF（資料を埋め込み表示）</h3>
+          <p class="tiny">※ブラウザ環境によっては、ローカルサーバ（python -m http.server）が必要です。</p>
+          <div style="height:10px"></div>
+          <iframe src="Fitness_Instructors_Digital_Renaissance.pdf" title="PDF資料"></iframe>
+          <div style="height:12px"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="Fitness_Instructors_Digital_Renaissance.pdf" download>PDFをダウンロード</a>
+            <a class="btn" href="#pricing">収益モデルへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <h2>収益モデル：時間切り売りからの脱却</h2>
+        <p class="sub">
+          「オンライン×データ×伴走」によって、月額の高付加価値プランが設計できます。 :contentReference[oaicite:13]{index=13}
+        </p>
+
+        <div class="pricing">
+          <div class="plan">
+            <h3>Basic</h3>
+            <div class="price">¥10,000–15,000 / 月</div>
+            <ul class="ul">
+              <li>週1のメニュー設計</li>
+              <li>チャットサポート</li>
+              <li>継続の型づくり</li>
+            </ul>
+            <div class="actions">
+              <a class="btn" href="#cta">このプランで相談</a>
+            </div>
+          </div>
+
+          <div class="plan reco">
+            <div class="badge">おすすめ</div>
+            <h3>Standard</h3>
+            <div class="price">¥20,000–35,000 / 月</div>
+            <ul class="ul">
+              <li>月2回のオンライン面談</li>
+              <li>バイタル/睡眠の定点チェック</li>
+              <li>習慣化の介入設計</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#cta">相談する</a>
+              <a class="btn" href="#solution">差別化ポイントを見る</a>
+            </div>
+          </div>
+
+          <div class="plan">
+            <h3>Premium</h3>
+            <div class="price">¥50,000–80,000 / 月</div>
+            <ul class="ul">
+              <li>週次カウンセリング</li>
+              <li>HRV/VO2 max等の深い解釈</li>
+              <li>医療連携・食事連携（範囲設計）</li>
+            </ul>
+            <div class="actions">
+              <a class="btn" href="#cta">プレミアムで相談</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>拡張戦略A：企業向け（B2B）</h3>
+            <p>
+              ウェアラブルデータを健康経営のエビデンスに。オフィスでできる運動のキュレーションや、
+              参加率・ポイント等でゲーミフィケーション化。 :contentReference[oaicite:14]{index=14}
+            </p>
+          </div>
+          <div class="card">
+            <h3>拡張戦略B：自治体・高齢者（B2G）</h3>
+            <p>
+              見守り×フィットネスでフレイル予防。日々のフィードバックを“安心”につなげる設計。 :contentReference[oaicite:15]{index=15}
+            </p>
+          </div>
+          <div class="card">
+            <h3>法的・倫理的ガードレール</h3>
+            <p>
+              ヘルスデータ共有の同意、目的範囲の明確化、医療行為との境界整理など、
+              信頼を担保する設計が価値になります。 :contentReference[oaicite:16]{index=16}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="wrap">
+        <div class="hero-card" style="padding:18px;">
+          <h2 style="margin:0 0 10px;">このLPを「あなたの商品」に仕上げます</h2>
+          <p class="sub" style="margin:0 0 12px;">
+            目的に合わせて、CTA・フォーム・価格表・導線（講演用/販売用/無料レポート配布用）まで最適化します。
+          </p>
+
+          <div class="grid" style="grid-template-columns:1fr; gap:12px;">
+            <div class="card" style="background: rgba(255,255,255,.04);">
+              <h3>次に決めるのはここだけ</h3>
+              <p>
+                ① 最終のCTA（例：無料相談/無料PDF請求/講座申込）<br>
+                ② 連絡手段（GoogleフォームURL / メール / LINE）<br>
+                ③ ターゲット（個人向け / 企業向け / 自治体向け）
+              </p>
+              <div style="height:12px"></div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn primary" href="#top">もう一度上から確認</a>
+                <a class="btn" href="#media">素材セクションへ</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="tiny" style="margin-top:12px;">
+            ※フォーム埋め込み（Googleフォーム等）も可能。CTAが決まれば、ここにそのまま組み込みます。
+          </p>
+        </div>
+
+        <div class="ctaDock">
+          <div class="ctaDock-inner">
+            <p><strong>次の一手：</strong>CTAのURLを決めて、ここに埋め込みましょう。</p>
+            <a class="btn primary" href="#cta">CTAを設定する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© Digital Concierge LP. All rights reserved.</div>
+      <div>※本ページは、アップロード資料の要点をLP化したデモです。表現・免責・プライバシー文言は実運用に合わせて調整してください。</div>
+    </div>
+  </footer>
+</body>
+</html>
+
